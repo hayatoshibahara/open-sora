@@ -1,0 +1,6 @@
+[submodule ".devcontainer"]
+	path = .devcontainer
+	url = git@github.com:hayatoshibahara/.devcontainer
+[submodule "Open-Sora"]
+	path = Open-Sora
+	url = git@github.com:hpcaitech/Open-Sora.git
