@@ -1,5 +1,5 @@
 🟩 Python 3.12.11
-🟩 Fri Dec 19 11:44:57 2025       
+🟩 Fri Dec 19 17:55:48 2025       
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 550.163.01             Driver Version: 550.163.01     CUDA Version: 12.4     |
 |-----------------------------------------+------------------------+----------------------+
@@ -8,7 +8,7 @@
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
 |   0  NVIDIA GeForce RTX 4090        Off |   00000000:01:00.0 Off |                  Off |
-|  0%   34C    P8             13W /  450W |     138MiB /  24564MiB |      0%      Default |
+|  0%   34C    P0             45W /  450W |     138MiB /  24564MiB |      0%      Default |
 |                                         |                        |                  N/A |
 +-----------------------------------------+------------------------+----------------------+
                                                                                          
@@ -1534,6 +1534,7 @@
   )
 )]
 🟩 build_upsample_block block_type='InterpolateConv' in_channels=1024 out_channels=1024 shortcut='duplicating' is_video=True temporal_upsample=True
+🟩 InterpolateConvUpSampleLayer.__init__ in_channels=1024 out_channels=1024 kernel_size=3 factor=2 mode='nearest' is_video=True temporal_upsample=True
 🟩 ConvLayer.__init__ in_channels=1024 out_channels=1024 kernel_size=3 stride=1 dilation=1 groups=1 use_bias=True dropout=0 norm=None act_func=None is_video=True pad_mode_3d='constant'
 🟩 build_norm name=None num_features=1024 kwargs={}
 🟩 build_act name=None kwargs={}
@@ -1843,6 +1844,7 @@
   )
 )]
 🟩 build_upsample_block block_type='InterpolateConv' in_channels=1024 out_channels=512 shortcut='duplicating' is_video=True temporal_upsample=True
+🟩 InterpolateConvUpSampleLayer.__init__ in_channels=1024 out_channels=512 kernel_size=3 factor=2 mode='nearest' is_video=True temporal_upsample=True
 🟩 ConvLayer.__init__ in_channels=1024 out_channels=512 kernel_size=3 stride=1 dilation=1 groups=1 use_bias=True dropout=0 norm=None act_func=None is_video=True pad_mode_3d='constant'
 🟩 build_norm name=None num_features=512 kwargs={}
 🟩 build_act name=None kwargs={}
@@ -2152,6 +2154,7 @@
   )
 )]
 🟩 build_upsample_block block_type='InterpolateConv' in_channels=512 out_channels=512 shortcut='duplicating' is_video=True temporal_upsample=False
+🟩 InterpolateConvUpSampleLayer.__init__ in_channels=512 out_channels=512 kernel_size=3 factor=2 mode='nearest' is_video=True temporal_upsample=False
 🟩 ConvLayer.__init__ in_channels=512 out_channels=512 kernel_size=3 stride=1 dilation=1 groups=1 use_bias=True dropout=0 norm=None act_func=None is_video=True pad_mode_3d='constant'
 🟩 build_norm name=None num_features=512 kwargs={}
 🟩 build_act name=None kwargs={}
@@ -2266,6 +2269,7 @@
   (shortcut): IdentityLayer()
 )]
 🟩 build_upsample_block block_type='InterpolateConv' in_channels=512 out_channels=256 shortcut='duplicating' is_video=True temporal_upsample=False
+🟩 InterpolateConvUpSampleLayer.__init__ in_channels=512 out_channels=256 kernel_size=3 factor=2 mode='nearest' is_video=True temporal_upsample=False
 🟩 ConvLayer.__init__ in_channels=512 out_channels=256 kernel_size=3 stride=1 dilation=1 groups=1 use_bias=True dropout=0 norm=None act_func=None is_video=True pad_mode_3d='constant'
 🟩 build_norm name=None num_features=256 kwargs={}
 🟩 build_act name=None kwargs={}
@@ -2380,6 +2384,7 @@
   (shortcut): IdentityLayer()
 )]
 🟩 build_upsample_block block_type='InterpolateConv' in_channels=256 out_channels=128 shortcut='duplicating' is_video=True temporal_upsample=False
+🟩 InterpolateConvUpSampleLayer.__init__ in_channels=256 out_channels=128 kernel_size=3 factor=2 mode='nearest' is_video=True temporal_upsample=False
 🟩 ConvLayer.__init__ in_channels=256 out_channels=128 kernel_size=3 stride=1 dilation=1 groups=1 use_bias=True dropout=0 norm=None act_func=None is_video=True pad_mode_3d='constant'
 🟩 build_norm name=None num_features=128 kwargs={}
 🟩 build_act name=None kwargs={}
@@ -2959,6 +2964,7 @@
 🟦 Encoder.forward after project_in x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 128, 4, 256, 256]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 128, 4, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 ResBlock.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 6, 258, 258])
@@ -2972,6 +2978,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟦 After conv2: torch.Size([1, 128, 4, 256, 256])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 128, 4, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 ResBlock.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 6, 258, 258])
@@ -2985,6 +2992,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟦 After conv2: torch.Size([1, 128, 4, 256, 256])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 128, 4, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 4, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 6, 258, 258])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 128, 6, 258, 258])
@@ -2995,6 +3003,7 @@
 🟦 Encoder.forward after stage 0 x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 256, 4, 128, 128]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 256, 4, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 ResBlock.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 6, 130, 130])
@@ -3008,6 +3017,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟦 After conv2: torch.Size([1, 256, 4, 128, 128])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 256, 4, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 ResBlock.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 6, 130, 130])
@@ -3021,6 +3031,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟦 After conv2: torch.Size([1, 256, 4, 128, 128])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 256, 4, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 4, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 6, 130, 130])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 256, 6, 130, 130])
@@ -3031,6 +3042,7 @@
 🟦 Encoder.forward after stage 1 x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 512, 4, 64, 64]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 512, 4, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 ResBlock.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 6, 66, 66])
@@ -3044,6 +3056,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟦 After conv2: torch.Size([1, 512, 4, 64, 64])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 ResBlock.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 6, 66, 66])
@@ -3057,6 +3070,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟦 After conv2: torch.Size([1, 512, 4, 64, 64])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 6, 66, 66])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 512, 6, 66, 66])
@@ -3068,6 +3082,7 @@
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 512, 4, 32, 32]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3075,6 +3090,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 4, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 4096])
@@ -3094,6 +3110,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3115,6 +3132,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After local_module: x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3122,6 +3140,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 4, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 4096])
@@ -3141,6 +3160,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3162,6 +3182,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After local_module: x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3169,6 +3190,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 4, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 4, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 4, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 4096])
@@ -3188,6 +3210,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 4, 32, 32])
@@ -3208,6 +3231,7 @@
 🟦 GLUMBConv.forward after point_conv x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 After local_module: x.shape=torch.Size([1, 512, 4, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 4, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 6, 34, 34])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 512, 6, 34, 34])
@@ -3221,6 +3245,7 @@
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 2, 16, 16]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3228,6 +3253,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 2, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 512])
@@ -3247,6 +3273,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3268,6 +3295,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3275,6 +3303,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 2, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 512])
@@ -3294,6 +3323,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3315,6 +3345,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3322,6 +3353,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 2, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 2, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 2, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 512])
@@ -3341,6 +3373,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 2, 16, 16])
@@ -3361,6 +3394,7 @@
 🟦 GLUMBConv.forward after point_conv x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 2, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 2, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 4, 18, 18])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1024, 4, 18, 18])
@@ -3374,6 +3408,7 @@
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 1, 8, 8]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3381,6 +3416,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3400,6 +3436,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3421,6 +3458,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3428,6 +3466,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3447,6 +3486,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3468,6 +3508,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3475,6 +3516,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3494,6 +3536,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3516,6 +3559,7 @@
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 Encoder.forward after stage 5 x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 1, 8, 8]) kwargs={}
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 3, 10, 10])
@@ -3530,6 +3574,7 @@
 🟩 DCAE.decode_single z.shape=torch.Size([1, 128, 1, 8, 8]) is_video_decoder=True
 🟩 Decoder.forward x.shape=torch.Size([1, 128, 1, 8, 8])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 128, 1, 8, 8]) kwargs={}
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 3, 10, 10])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 128, 3, 10, 10])
@@ -3542,6 +3587,7 @@
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 1, 8, 8]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3549,6 +3595,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3568,6 +3615,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3589,6 +3637,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3596,6 +3645,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3615,6 +3665,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3636,6 +3687,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3643,6 +3695,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 8, 8])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 8, 8])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 8, 8])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 64])
@@ -3662,6 +3715,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 8, 8])
@@ -3685,17 +3739,21 @@
 🟦 Decoder.forward after stage i=0 x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 1, 8, 8]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 1, 8, 8])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 InterpolateConvUpSampleLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟩 chunked_interpolate x.shape=torch.Size([1, 1024, 1, 8, 8]) scale_factor=[1, 2, 2] mode='nearest'
+🟦 After interpolate: torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 3, 18, 18])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1024, 3, 18, 18])
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟦 After conv: torch.Size([1, 1024, 1, 16, 16])
 🟩 ChannelDuplicatingPixelShuffleUpSampleLayer.forward x.shape=torch.Size([1, 1024, 1, 8, 8])
 🟦 temporal_upsample repeats (T==1): 4
 🟦 after repeat_interleave: torch.Size([1, 4096, 1, 8, 8])
 🟦 after pixel_shuffle: torch.Size([1, 1, 1024, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3703,6 +3761,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 256])
@@ -3722,6 +3781,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3743,6 +3803,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3750,6 +3811,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 256])
@@ -3769,6 +3831,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3790,6 +3853,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 After local_module: x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3797,6 +3861,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 3072, 1, 16, 16])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 3072, 1, 16, 16])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 6144, 1, 16, 16])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 64, 96, 256])
@@ -3816,6 +3881,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 After context_module: x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 1, 16, 16])
@@ -3839,17 +3905,21 @@
 🟦 Decoder.forward after stage i=1 x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 1024, 1, 16, 16]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 1024, 1, 16, 16])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 InterpolateConvUpSampleLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟩 chunked_interpolate x.shape=torch.Size([1, 1024, 1, 16, 16]) scale_factor=[1, 2, 2] mode='nearest'
+🟦 After interpolate: torch.Size([1, 1024, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 1024, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 1024, 3, 34, 34])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1024, 3, 34, 34])
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 512, 1, 32, 32])
+🟦 After conv: torch.Size([1, 512, 1, 32, 32])
 🟩 ChannelDuplicatingPixelShuffleUpSampleLayer.forward x.shape=torch.Size([1, 1024, 1, 16, 16])
 🟦 temporal_upsample repeats (T==1): 2
 🟦 after repeat_interleave: torch.Size([1, 2048, 1, 16, 16])
 🟦 after pixel_shuffle: torch.Size([1, 1, 512, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3857,6 +3927,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 1, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 1024])
@@ -3876,6 +3947,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3897,6 +3969,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 After local_module: x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3904,6 +3977,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 1, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 1024])
@@ -3923,6 +3997,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3944,6 +4019,7 @@
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 After local_module: x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 EfficientViTBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 LiteMLA.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3951,6 +4027,7 @@
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 1536, 1, 32, 32])
+🟦 LiteMLA.forward after aggreg op oped.shape=torch.Size([1, 1536, 1, 32, 32])
 🟦 LiteMLA.forward after multi-scale conv qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟩 LiteMLA.relu_linear_att qkv.shape=torch.Size([1, 3072, 1, 32, 32])
 🟦 LiteMLA.relu_linear_att after reshape qkv.shape=torch.Size([1, 32, 96, 1024])
@@ -3970,6 +4047,7 @@
 🟦 LiteMLA.forward after proj out.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 After context_module: x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 GLUMBConv.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 1, 32, 32])
@@ -3993,16 +4071,20 @@
 🟦 Decoder.forward after stage i=2 x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 512, 1, 32, 32]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 512, 1, 32, 32])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 InterpolateConvUpSampleLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟩 chunked_interpolate x.shape=torch.Size([1, 512, 1, 32, 32]) scale_factor=[1, 2, 2] mode='nearest'
+🟦 After interpolate: torch.Size([1, 512, 1, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 3, 66, 66])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 512, 3, 66, 66])
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 512, 1, 64, 64])
+🟦 After conv: torch.Size([1, 512, 1, 64, 64])
 🟩 ChannelDuplicatingPixelShuffleUpSampleLayer.forward x.shape=torch.Size([1, 512, 1, 32, 32])
 🟦 temporal_upsample repeats (T==1): 4
 🟦 after repeat_interleave: torch.Size([1, 2048, 1, 32, 32])
 🟦 after pixel_shuffle: torch.Size([1, 1, 512, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ResBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 3, 66, 66])
@@ -4016,6 +4098,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 After conv2: torch.Size([1, 512, 1, 64, 64])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ResBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 3, 66, 66])
@@ -4029,6 +4112,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 After conv2: torch.Size([1, 512, 1, 64, 64])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 512, 1, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ResBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 3, 66, 66])
@@ -4045,16 +4129,20 @@
 🟦 Decoder.forward after stage i=3 x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 512, 1, 64, 64]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 512, 1, 64, 64])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 InterpolateConvUpSampleLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟩 chunked_interpolate x.shape=torch.Size([1, 512, 1, 64, 64]) scale_factor=[1, 2, 2] mode='nearest'
+🟦 After interpolate: torch.Size([1, 512, 1, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 512, 1, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 512, 3, 130, 130])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 512, 3, 130, 130])
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 256, 1, 128, 128])
+🟦 After conv: torch.Size([1, 256, 1, 128, 128])
 🟩 ChannelDuplicatingPixelShuffleUpSampleLayer.forward x.shape=torch.Size([1, 512, 1, 64, 64])
 🟦 temporal_upsample repeats (T==1): 2
 🟦 after repeat_interleave: torch.Size([1, 1024, 1, 64, 64])
 🟦 after pixel_shuffle: torch.Size([1, 1, 256, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ResBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 3, 130, 130])
@@ -4068,6 +4156,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 After conv2: torch.Size([1, 256, 1, 128, 128])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 256, 1, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ResBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 3, 130, 130])
@@ -4081,6 +4170,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 After conv2: torch.Size([1, 256, 1, 128, 128])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 256, 1, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ResBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 3, 130, 130])
@@ -4097,16 +4187,20 @@
 🟦 Decoder.forward after stage i=4 x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 auto_grad_checkpoint len(args)=1 args[0].shape=torch.Size([1, 256, 1, 128, 128]) kwargs={}
 🟩 OpSequential forward x.shape=torch.Size([1, 256, 1, 128, 128])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 InterpolateConvUpSampleLayer.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟩 chunked_interpolate x.shape=torch.Size([1, 256, 1, 128, 128]) scale_factor=[1, 2, 2] mode='nearest'
+🟦 After interpolate: torch.Size([1, 256, 1, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 256, 1, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 256, 3, 258, 258])
 🟩 ChannelChunkConv3d.forward input.shape=torch.Size([1, 256, 3, 258, 258])
 🟦 ConvLayer.forward after conv x.shape=torch.Size([1, 128, 1, 256, 256])
+🟦 After conv: torch.Size([1, 128, 1, 256, 256])
 🟩 ChannelDuplicatingPixelShuffleUpSampleLayer.forward x.shape=torch.Size([1, 256, 1, 128, 128])
 🟦 temporal_upsample repeats (T==1): 2
 🟦 after repeat_interleave: torch.Size([1, 512, 1, 128, 128])
 🟦 after pixel_shuffle: torch.Size([1, 1, 128, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ResBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 3, 258, 258])
@@ -4120,6 +4214,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟦 After conv2: torch.Size([1, 128, 1, 256, 256])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 128, 1, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ResBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 3, 258, 258])
@@ -4133,6 +4228,7 @@
 🟩 RMSNorm3d forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟦 After conv2: torch.Size([1, 128, 1, 256, 256])
 🟩 IdentityLayer forward x.shape=torch.Size([1, 128, 1, 256, 256])
+🟩 ResidualBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ResBlock.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟩 ConvLayer.forward x.shape=torch.Size([1, 128, 1, 256, 256])
 🟦 ConvLayer.forward after pad x.shape=torch.Size([1, 128, 3, 258, 258])
@@ -4367,11 +4463,16 @@
 🟦 After img_in: img.shape=torch.Size([1, 16, 384])
 🟩 timestep_embedding t.shape=torch.Size([1]) dim=256 max_period=10000 time_factor=1000.0
 🟩 MLPEmbedder.forward x.shape=torch.Size([1, 256])
+🟦 After time_in: vec.shape=torch.Size([1, 384])
 🟩 MLPEmbedder.forward x.shape=torch.Size([1, 768])
+🟦 After vector_in: vec.shape=torch.Size([1, 384])
+🟦 After txt_in: txt.shape=torch.Size([1, 16, 384])
+🟦 Before pe_embedder: ids.shape=torch.Size([1, 32, 3])
 🟩 LigerEmbedND.forward ids.shape=torch.Size([1, 32, 3])
 🟩 liger_rope pos.shape=torch.Size([1, 32]) dim=16 theta=10000
 🟩 liger_rope pos.shape=torch.Size([1, 32]) dim=56 theta=10000
 🟩 liger_rope pos.shape=torch.Size([1, 32]) dim=56 theta=10000
+🟦 After pe_embedder: pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟦 After prepare_block_inputs: img.shape=torch.Size([1, 16, 384]) txt.shape=torch.Size([1, 16, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 auto_grad_checkpoint len(args)=4 args[0].shape=torch.Size([1, 16, 384]) kwargs={}
 🟩 DoubleStreamBlock.forward img.shape=torch.Size([1, 16, 384]) txt.shape=torch.Size([1, 16, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4411,6 +4512,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4425,6 +4527,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4439,6 +4542,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4453,6 +4557,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4467,6 +4572,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4481,6 +4587,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4495,6 +4602,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4509,6 +4617,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4523,6 +4632,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4537,6 +4647,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4551,6 +4662,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4565,6 +4677,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4579,6 +4692,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4593,6 +4707,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4607,6 +4722,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4621,6 +4737,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4635,6 +4752,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4649,6 +4767,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4663,6 +4782,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4677,6 +4797,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4691,6 +4812,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4705,6 +4827,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4719,6 +4842,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4733,6 +4857,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4747,6 +4872,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4761,6 +4887,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4775,6 +4902,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4789,6 +4917,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4803,6 +4932,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4817,6 +4947,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4831,6 +4962,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4845,6 +4977,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4859,6 +4992,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4873,6 +5007,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4887,6 +5022,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4901,6 +5037,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4915,6 +5052,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟩 auto_grad_checkpoint len(args)=3 args[0].shape=torch.Size([1, 32, 384]) kwargs={}
 🟩 SingleStreamBlock.forward x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
 🟩 SingleStreamBlockProcessor.__call__ x.shape=torch.Size([1, 32, 384]) vec.shape=torch.Size([1, 384]) pe[0].shape=torch.Size([1, 32, 128]) pe[1].shape=torch.Size([1, 32, 128])
@@ -4929,6 +5067,7 @@
 🟦 LigerRopeを適用 cos.shape=torch.Size([1, 32, 128]) sin.shape=torch.Size([1, 32, 128])
 🟩 flash_attn_func q.shape=torch.Size([1, 32, 3, 128]) k.shape=torch.Size([1, 32, 3, 128]) v.shape=torch.Size([1, 32, 3, 128])
 🟦 attention output x.shape=torch.Size([1, 32, 384])
+🟦 SingleStreamBlock output output.shape=torch.Size([1, 32, 384])
 🟦 After single_blocks: img.shape=torch.Size([1, 32, 384])
 🟦 After single_blocks: img.shape=torch.Size([1, 16, 384])
 🟩 LastLayer.forward x.shape=torch.Size([1, 16, 384]) vec.shape=torch.Size([1, 384])
