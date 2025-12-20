@@ -12,7 +12,8 @@ graph TD
         direction TB
         ImgLatent[Image Latents<br/>（B, T, N, C）]:::tensor
         TxtEmbInput[Text Embeddings<br/>T5 （B, L, D_txt）]:::tensor
-        Timesteps[Timesteps]:::cond
+        Timesteps[Timesteps（B,）]:::cond
+        Guidance[Guidance（B,）]:::cond
         ClipVec[CLIP Vector<br/>（B, D_vec）]:::cond
         PosIDs[Positional IDs<br/>（Img + Txt）]:::tensor
     end
@@ -29,9 +30,11 @@ graph TD
 
         %% Conditioning Vector Generation
         TimeIn[[time_in<br/>MLP]]:::module
+        GuidanceIn[[guidance_in<br/>MLP]]:::module
         VecIn[[vector_in<br/>MLP]]:::module
         
         Timesteps --> TimeIn --> VecSum((+)):::process
+        Guidance --> GuidanceIn --> VecSum
         ClipVec --> VecIn --> VecSum
         VecSum --> GlobalVec[Global Condition Vec<br/>（Shift/Scale/Gate source）]:::cond
 
@@ -41,7 +44,7 @@ graph TD
     end
 
     %% --- 3. Double Stream Blocks ---
-    subgraph DoubleStream [Double Stream Blocks]
+    subgraph DoubleStream [Double Stream Blocks x 1]
         direction TB
         Note1[Process Image & Text streams separately<br/>but attend jointly]:::process
         
@@ -121,7 +124,7 @@ graph TD
     end
 
     %% --- 5. Single Stream Blocks ---
-    subgraph SingleStream [Single Stream Blocks]
+    subgraph SingleStream [Single Stream Blocks x 32]
         direction TB
         Note2[Flux-style Block:<br/>Parallel Attention & MLP]:::process
 
