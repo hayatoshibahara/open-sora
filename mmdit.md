@@ -10,7 +10,7 @@ graph TD
     %% --- 1. 入力層 ---
     subgraph Inputs [Inputs]
         direction TB
-        ImgLatent[Image Latents<br/>（B, T, N, C）]:::tensor
+        ImgLatent[Image Latents<br/>（B, T, C）]:::tensor
         TxtEmbInput[Text Embeddings<br/>T5 （B, L, D_txt）]:::tensor
         Timesteps[Timesteps（B,）]:::cond
         Guidance[Guidance（B,）]:::cond
